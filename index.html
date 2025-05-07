@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dcard 註冊 / 登入</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; background-color: #003249; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang TC", "Microsoft JhengHei", sans-serif; }
+        header { background-color: #006AA6; padding: 16px 20px; }
+        header img.logo { width: 120px; }
+        .wrapper { display: flex; height: calc(100% - 64px); }
+        .left, .right { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .left { flex-direction: column; color: #ffffff; }
+        .right { }
+
+        .qr-container { position: relative; }
+        .qr-container img.qr { width: 250px; height: 250px; }
+        .qr-caption { margin-top: 12px; font-size: 14px; }
+        .promo-text { margin-top: 30px; text-align: center; }
+        .promo-text h2 { font-size: 24px; margin-bottom: 8px; }
+        .promo-text p { font-size: 16px; color: #B0BEC5; margin-bottom: 20px; line-height: 1.4; }
+        .promo-text a { color: #4DA3DD; font-size: 14px; text-decoration: none; }
+        .badges { margin-top: 30px; display: flex; gap: 16px; }
+        .badges img { width: 140px; }
+
+        .login-box {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 380px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 40px 32px;
+        }
+        .login-box h1 { font-size: 28px; text-align: center; margin-bottom: 24px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 14px; margin-bottom: 6px; color: #333333; }
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #CCC;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .form-group .toggle-view {
+            position: absolute;
+            right: 12px;
+            top: 38px;
+            cursor: pointer;
+        }
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #4DA3DD;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .help-links { margin-top: 16px; font-size: 14px; color: #4DA3DD; text-align: center; }
+        .help-links a { color: #4DA3DD; text-decoration: none; margin: 0 8px; }
+        .footer-text { margin-top: 60px; font-size: 12px; color: #ffffff; text-align: center; }
+        .footer-text a { color: #ffffff; text-decoration: underline; }
+    </style>
+</head>
+<body>
+<header>
+    <img class="logo" src="img/logo.png" alt="Dcard Logo">
+</header>
+<div class="wrapper">
+    <div class="left">
+        <div class="qr-container">
+            <img class="qr" src="img/qrcode.webp" alt="掃描下載 Dcard App！">
+            <div class="qr-caption">立即掃描下載 Dcard App！</div>
+        </div>
+        <div class="promo-text">
+            <h2>年輕人都在 Dcard 上討論</h2>
+            <p>不想錯過任何有趣的話題嗎？<br>趕快加入我們吧！</p>
+            <a href="#">先看討論區</a>
+        </div>
+        <div class="badges">
+            <a href="#"><img src="img/google-play-badge.webp" alt="Get it on Google Play"></a>
+            <a href="#"><img src="img/app-store-badge.webp" alt="Download on the App Store"></a>
+        </div>
+    </div>
+    <div class="right">
+        <div class="login-box">
+            <h1>註冊 / 登入</h1>
+            <div class="form-group">
+                <label for="email">常用信箱 <span style="float:right;font-size:14px;color:#4DA3DD;"><a href="#">使用手機登入</a></span></label>
+                <input type="email" id="email" placeholder="輸入信箱">
+            </div>
+            <div class="form-group" style="position:relative;">
+                <label for="password">密碼</label>
+                <input type="password" id="password" placeholder="輸入密碼">
+                <span class="toggle-view" onclick="togglePass()">👁️</span>
+            </div>
+            <button class="btn-primary">註冊 / 登入</button>
+            <div class="help-links">
+                <a href="#">未收到驗證信</a>·<a href="#">忘記密碼</a><br>
+                <a href="#">其他註冊/登入方式 ▲</a>
+            </div>
+            <div class="footer-text">
+                註冊/登入即代表您同意遵守 <a href="#">Dcard 使用協議</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function togglePass() {
+        const pwd = document.getElementById('password');
+        pwd.type = pwd.type === 'password' ? 'text' : 'password';
+    }
+</script>
+</body>
+</html>
