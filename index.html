@@ -50,7 +50,7 @@
             padding: 40px 32px;
         }
         .login-box h1 { font-size: 28px; text-align: center; margin-bottom: 24px; }
-        .form-group { margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; position: relative; }
         .form-group label { display: block; font-size: 14px; margin-bottom: 6px; color: #333333; }
         .form-group input {
             width: 100%;
@@ -106,10 +106,13 @@
         <div class="login-box">
             <h1>註冊 / 登入</h1>
             <div class="form-group">
-                <label for="email">常用信箱 <span style="float:right;font-size:14px;color:#4DA3DD;"><a href="#">使用手機登入</a></span></label>
-                <input type="email" id="email" placeholder="輸入信箱">
+                <label for="email">
+                    常用信箱
+                    <span style="float:right;font-size:14px;color:#4DA3DD;"><a href="#">使用手機登入</a></span>
+                </label>
+                <input type="email" id="email" placeholder="輸入信箱" required>
             </div>
-            <div class="form-group" style="position:relative;">
+            <div class="form-group">
                 <label for="password">密碼</label>
                 <input type="password" id="password" placeholder="輸入密碼">
                 <span class="toggle-view" onclick="togglePass()">👁️</span>
